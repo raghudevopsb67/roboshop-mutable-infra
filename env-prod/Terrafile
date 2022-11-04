@@ -1,5 +1,5 @@
 vpc:
-  source:  "https://github.com/raghudevopsb67/roboshop-mutable-infra.git"
-  version: "1.0.0"
+  source:  "https://github.com/raghudevopsb67/tf-module-vpc"
+  version: "main"
 
 

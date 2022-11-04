@@ -1,5 +1,5 @@
 vpc:
   source:  "https://github.com/raghudevopsb67/tf-module-vpc"
-  version: "1.0.0"
+  version: "main"
 
 
