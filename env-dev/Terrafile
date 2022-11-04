@@ -1,5 +1,5 @@
-tf-aws-vpc:
-  source:  "github.com/raghudevopsb67/tf-module-vpc"
-  version: "1.0.1"
+vpc:
+  source:  "https://github.com/raghudevopsb67/roboshop-mutable-infra.git"
+  version: "1.0.0"
 
 
