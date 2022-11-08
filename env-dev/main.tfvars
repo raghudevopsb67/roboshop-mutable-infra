@@ -21,7 +21,8 @@ vpc = {
 }
 
 management_vpc = {
-  vpc_id = "vpc-075435ce9af088bfa"
+  vpc_id      = "vpc-075435ce9af088bfa"
+  route_table = "rtb-032742c71bcb7a780"
 }
 
 
