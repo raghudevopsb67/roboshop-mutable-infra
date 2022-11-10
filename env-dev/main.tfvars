@@ -37,4 +37,11 @@ management_vpc = {
 }
 
 
+docdb = {
+  db1 = {
+    engine = "docdb"
+  }
+}
+
+
 env = "dev"
