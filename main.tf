@@ -9,8 +9,10 @@ module "vpc" {
 //  source         = "./vendor/modules/docdb"
 //  docdb            = var.docdb
 //  env            = var.env
+//  subnets = lookup(local.subnets, "database", null)
 //}
 
-output "merged" {
-  value = merge(module.vpc.private_subnets.subnets)
-}
+
+//output "merged" {
+//  value = merge()
+//}
