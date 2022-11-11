@@ -6,6 +6,6 @@ locals {
 }
 
 output "public_subnets" {
-  value = local.public_subnets
+  value = local.public_subnets[*].id
 }
 
