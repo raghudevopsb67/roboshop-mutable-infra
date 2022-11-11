@@ -13,7 +13,7 @@ module "vpc" {
 //}
 
 
-output "private_subnets" {
+output "app_private_subnets" {
   value = local.private_subnets
 }
 
