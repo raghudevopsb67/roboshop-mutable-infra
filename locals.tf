@@ -1,4 +1,4 @@
 locals {
-  private_subnets = tomap({ for k, v in module.vpc.private_subnets : k => v.subnets })
+  private_subnets = tomap([for k, v in module.vpc.private_subnets : v.subnets])
 }
 
