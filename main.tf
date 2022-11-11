@@ -13,6 +13,7 @@ module "vpc" {
 //}
 
 
-//output "merged" {
-//  value = merge()
-//}
+output "apps_private_subnets" {
+  value = module.vpc.private_subnets
+}
+
