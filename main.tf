@@ -27,5 +27,5 @@ module "vpc" {
 //
 
 output "app_subnets" {
-  value = lookup(module.vpc, "private_subnets", null)
+  value = lookup(lookup(lookup(module.vpc, "private_subnets", null), "app", null), "subnets", null)[*].id
 }
