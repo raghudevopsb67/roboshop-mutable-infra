@@ -11,12 +11,13 @@ module "vpc" {
 }
 
 //module "docdb" {
+//  for_each = var.docdb
 //  source  = "./vendor/modules/docdb"
 //  docdb   = var.docdb
 //  env     = var.env
-//  subnets = local.database_private_subnets[*].id
+//  subnets =
 //}
-//
+
 //module "rds" {
 //  source  = "./vendor/modules/rds"
 //  rds     = var.rds
@@ -24,3 +25,7 @@ module "vpc" {
 //  subnets = local.database_private_subnets[*].id
 //}
 //
+
+output "app_subnets" {
+  value = module.vpc
+}
