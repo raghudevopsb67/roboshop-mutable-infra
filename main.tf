@@ -16,7 +16,7 @@ module "docdb" {
   name     = each.key
   engine   = each.value.engine
   env      = var.env
-  subnets  = [for i, j in module.vpc : j.private_subnets["app"]["subnets"][*].id]
+  subnets  = flatten([for i, j in module.vpc : j.private_subnets["app"]["subnets"][*].id])
 }
 
 //module "rds" {
