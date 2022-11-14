@@ -26,6 +26,6 @@ module "vpc" {
 //}
 //
 
-//output "app_subnets" {
-//  value = [for i, j in lookup(module.vpc, "private_subnets", null) : j.subnets]
-//}
+output "app_subnets" {
+  value = module.vpc.private_subnets
+}
