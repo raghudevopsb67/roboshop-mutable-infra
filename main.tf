@@ -46,7 +46,7 @@ module "elasticache" {
 }
 
 module "rabbitmq" {
-  source        = "./vendor/modules/elasticache"
+  source        = "./vendor/modules/rabbitmq"
   for_each      = var.rabbitmq
   env           = var.env
   subnets       = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
