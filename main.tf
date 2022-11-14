@@ -27,5 +27,5 @@ module "vpc" {
 //
 
 output "app_subnets" {
-  value = module.vpc.private_subnets
+  value = [for i, j in module.vpc : j.private_subnets]
 }
