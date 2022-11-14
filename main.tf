@@ -62,6 +62,6 @@ module "apps" {
   name          = each.key
   instance_type = each.value.instance_type
   min_size      = each.value.min_size
-  max_size      = each.value.max_max
+  max_size      = each.value.max_size
 }
 
