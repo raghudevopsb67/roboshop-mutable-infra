@@ -34,4 +34,14 @@ module "rds" {
 }
 
 
-//[for i, j in module.vpc : j.private_subnets["app"]["subnets"][*].id]
+module "elasticache" {
+  source          = "./vendor/modules/elasticache"
+  for_each        = var.elasticache
+  env             = var.env
+  subnets         = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
+  name            = each.key
+  engine          = each.value.engine
+  engine_version  = each.value.engine_version
+  node_type       = each.value.node_type
+  num_cache_nodes = each.value.num_cache_nodes
+}
