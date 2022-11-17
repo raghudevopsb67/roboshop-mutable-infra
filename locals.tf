@@ -9,3 +9,20 @@
 ////  value = local.public_subnets[*].id
 ////}
 //
+
+locals {
+  alb = {
+    public = {
+      vpc_cidr = "0.0.0.0/0"
+    }
+    private = {
+      vpc_cidr = element([for i, j in module.vpc : j.vpc_cidr], 0)
+    }
+  }
+  merged_alb = tomap({
+    for i in keys(var.alb) : i => {
+      internal = var.alb[i].internal
+      vpc_cidr = local.alb[i].vpc_cidr
+    }
+  })
+}
