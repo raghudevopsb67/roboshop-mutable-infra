@@ -72,13 +72,12 @@ module "apps" {
 }
 
 module "alb" {
-  source          = "./vendor/modules/alb"
-  for_each        = local.merged_alb
-  env             = var.env
-  private_subnets = flatten([for i, j in module.vpc : j.private_subnets["app"]["subnets"][*].id])
-  public_subnets  = flatten([for i, j in module.vpc : j.public_subnets["public"]["subnets"][*].id])
-  name            = each.key
-  vpc_id          = element([for i, j in module.vpc : j.vpc_id], 0)
-  vpc_cidr        = element([for i, j in module.vpc : j.vpc_cidr], 0)
-  internal        = each.value.internal
+  source   = "./vendor/modules/alb"
+  for_each = local.merged_alb
+  env      = var.env
+  subnets  = each.value.subnets
+  name     = each.key
+  vpc_id   = element([for i, j in module.vpc : j.vpc_id], 0)
+  vpc_cidr = element([for i, j in module.vpc : j.vpc_cidr], 0)
+  internal = each.value.internal
 }
