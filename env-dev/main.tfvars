@@ -118,12 +118,14 @@ apps = {
     min_size             = 1
     app_port_no          = 80
     type                 = "frontend"
-    lb_listener_priority = 0
+    lb_listener_priority = 100
+    public_dns_name      = "dev"
   }
 }
 
 BASTION_NODE    = "172.31.2.218/32"
 private_zone_id = "Z02090163Q152ZKQQQT6A"
+public_zone_id  = "Z054900412BD6N5CVSC0X"
 PROMETHEUS_NODE = "172.31.14.134/32"
 
 alb = {
