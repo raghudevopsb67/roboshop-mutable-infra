@@ -74,6 +74,7 @@ module "apps" {
   alb                  = module.alb
   private_zone_id      = var.private_zone_id
   public_dns_name      = each.value.public_dns_name
+  public_zone_id       = var.public_zone_id
 }
 
 module "alb" {
